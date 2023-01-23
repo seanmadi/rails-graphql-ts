@@ -8,7 +8,7 @@ module Types
     # They will be entry points for queries on your schema.
 
     field :items,
-      [Types::ItemType],
+      Types::ItemType.connection_type,
       null: false,
       description: "Return a list of items"
     def items
@@ -16,7 +16,7 @@ module Types
     end
 
     field :artists,
-      [Types::ArtistType],
+      Types::ArtistType.connection_type,
       null: false,
       description: "Return a list of artists"
     def artists
