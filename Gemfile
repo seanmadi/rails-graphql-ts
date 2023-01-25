@@ -69,3 +69,4 @@ end
 gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
 gem "rack-cors"
+gem 'bcrypt', '~> 3.1.2'
