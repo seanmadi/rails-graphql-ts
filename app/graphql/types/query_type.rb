@@ -7,10 +7,13 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    field_class GraphqlDevise::Types::BaseField
+
     field :items,
       Types::ItemType.connection_type,
       null: false,
-      description: "Return a list of items"
+      description: "Return a list of items",
+      authenticate: false
     def items
       Item.all
     end
@@ -18,7 +21,8 @@ module Types
     field :artists,
       Types::ArtistType.connection_type,
       null: false,
-      description: "Return a list of artists"
+      description: "Return a list of artists",
+      authenticate: false
     def artists
       Artist.all
     end
